@@ -1,0 +1,8 @@
+Feature: Detect environmental temperature on IoT device
+
+  Scenario: System detects environmental temperature
+    Given the IoT device is active
+    When the system measures the environmental temperature
+    Then the temperature should be recorded in real-time
+    And the system should update the data every 10 seconds
+    And the system should display an error message if the sensor malfunctions
