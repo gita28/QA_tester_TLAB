@@ -1,0 +1,8 @@
+Feature: Receiving sensor activation command from back end
+
+  Scenario: IoT device receives sensor activation command from back end system
+    Given the IoT device is ready to receive commands
+    When the back end system sends the sensor activation command
+    Then the IoT device should receive and process the command
+    And the sensor should be activated as per the received command
+    And if the command fails, the system should retry 3 times before displaying an error message

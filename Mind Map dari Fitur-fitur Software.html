@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Map of Software Features</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .mindmap {
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .mindmap ul {
+            list-style-type: none;
+            padding-left: 20px;
+        }
+
+        .mindmap ul ul {
+            padding-left: 20px;
+        }
+
+        .mindmap li {
+            margin: 10px 0;
+        }
+
+        .mindmap h2 {
+            color: #333;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .mindmap h3 {
+            color: #555;
+            font-size: 18px;
+            margin-top: 15px;
+        }
+
+        .mindmap p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Mind Map of Software Features</h1>
+
+    <div class="mindmap">
+        <ul>
+            <li>
+                <h2>1. Sub Sistem Perangkat IoT</h2>
+                <ul>
+                    <li><h3>Sensor Lingkungan</h3></li>
+                    <ul>
+                        <li>Sensor Suhu Lingkungan</li>
+                        <li>Sensor Kelembaban Lingkungan</li>
+                        <li>Sensor Intensitas Cahaya Lingkungan</li>
+                        <li>Pengambilan Gambar Kondisi Lingkungan</li>
+                    </ul>
+                    <li><h3>Daya</h3></li>
+                    <ul>
+                        <li>Pengisian Daya dari Solar Panel</li>
+                    </ul>
+                </ul>
+            </li>
+
+            <li>
+                <h2>2. Sub Sistem Komunikasi</h2>
+                <ul>
+                    <li><h3>Modem 4G</h3></li>
+                    <ul>
+                        <li>Pengiriman Data Sensor:
+                            <ul>
+                                <li>Data Suhu Lingkungan</li>
+                                <li>Data Intensitas Cahaya</li>
+                                <li>Data Kelembaban Udara</li>
+                                <li>Data Gambar Kondisi Perangkat Serangga</li>
+                            </ul>
+                        </li>
+                        <li>Pengiriman Data Perangkat:
+                            <ul>
+                                <li>Nomor Pengenal Perangkat IoT</li>
+                                <li>Status Aktif/Non-Aktif Perangkat IoT</li>
+                            </ul>
+                        </li>
+                        <li><h3>Penerimaan Perintah</h3></li>
+                        <ul>
+                            <li>Aktivasi Sensor dari Back End</li>
+                        </ul>
+                        <li><h3>Protokol Komunikasi</h3></li>
+                        <ul>
+                            <li>MQTT</li>
+                            <li>HTTP</li>
+                        </ul>
+                    </ul>
+                </ul>
+            </li>
+
+            <li>
+                <h2>3. Sub Sistem Back End</h2>
+                <ul>
+                    <li><h3>Penerimaan dan Penyimpanan Data Sensor</h3></li>
+                    <ul>
+                        <li>Data Suhu Lingkungan</li>
+                        <li>Data Intensitas Cahaya Lingkungan</li>
+                        <li>Data Kelembaban Udara</li>
+                        <li>Data Gambar Kondisi Perangkat Serangga</li>
+                    </ul>
+                    <li><h3>Penerimaan dan Penyimpanan Data Perangkat</h3></li>
+                    <ul>
+                        <li>Nomor Pengenal Perangkat IoT</li>
+                        <li>Status Aktif/Non-Aktif Perangkat IoT</li>
+                    </ul>
+                    <li><h3>Pengiriman Data Sensor ke Front End</h3></li>
+                    <ul>
+                        <li>Data Suhu Lingkungan</li>
+                        <li>Data Intensitas Cahaya Lingkungan</li>
+                        <li>Data Kelembaban Udara</li>
+                        <li>Data Gambar Kondisi Perangkat Serangga</li>
+                    </ul>
+                    <li><h3>Penyimpanan</h3></li>
+                    <ul>
+                        <li>Gambar ke Object Storage</li>
+                        <li>Data ke Database Postgres</li>
+                    </ul>
+                </ul>
+            </li>
+
+            <li>
+                <h2>4. Sub Sistem Front End</h2>
+                <ul>
+                    <li><h3>Menampilkan Data Sensor</h3></li>
+                    <ul>
+                        <li>Suhu Lingkungan</li>
+                        <li>Intensitas Cahaya Lingkungan</li>
+                        <li>Kelembaban Udara</li>
+                        <li>Gambar Kondisi Perangkat Serangga</li>
+                    </ul>
+                    <li><h3>Menampilkan Grafik Hasil Sensor</h3></li>
+                    <ul>
+                        <li>Berdasarkan Jangka Waktu (Harian, Mingguan, Jam)</li>
+                        <li>Berdasarkan Lokasi Perangkat (Peta)</li>
+                        <li>Berdasarkan Identitas Perangkat IoT</li>
+                    </ul>
+                    <li><h3>Notifikasi</h3></li>
+                    <ul>
+                        <li>Status Aktif/Non-Aktif Perangkat IoT</li>
+                        <li>Data Baru dari Sensor Lingkungan</li>
+                    </ul>
+                    <li><h3>Pengiriman Data ke Back End</h3></li>
+                    <ul>
+                        <li>Aktivasi Sensor Lingkungan</li>
+                        <li>Pengaturan Jadwal Pengiriman Data</li>
+                    </ul>
+                    <li><h3>Pengelolaan Data</h3></li>
+                    <ul>
+                        <li>Tambah/Edit/Hapus Data Perangkat IoT</li>
+                        <li>Tambah/Edit/Hapus Foto Koleksi Serangga</li>
+                    </ul>
+                    <li><h3>Hak Akses</h3></li>
+                    <ul>
+                        <li>Role-Based Access Control</li>
+                    </ul>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+</body>
+</html>

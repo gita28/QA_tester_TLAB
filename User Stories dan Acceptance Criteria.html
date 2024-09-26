@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Stories dan Acceptance Criteria</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        h2, h3 {
+            color: #555;
+            margin-top: 20px;
+        }
+        h2 {
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 5px;
+        }
+        p {
+            margin: 10px 0;
+        }
+        ul {
+            margin: 10px 0 20px 20px;
+        }
+        ul li {
+            margin: 5px 0;
+        }
+        .epic {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .acceptance-criteria {
+            margin-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>User Stories dan Acceptance Criteria</h1>
+
+    <div class="epic">
+        <h2>EPIC 1: Sub Sistem Perangkat IoT</h2>
+
+        <h3>User Story 1: Deteksi Suhu Lingkungan</h3>
+        <p><strong>As a</strong> system user,</p>
+        <p><strong>I want</strong> the IoT system to detect the ambient temperature</p>
+        <p><strong>so that</strong> I can monitor temperature changes in the environment.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The system detects and records ambient temperature in real-time.</li>
+                <li>The temperature data is updated at regular intervals (e.g., every 10 seconds).</li>
+                <li>The temperature sensor works within the specified range (e.g., -20°C to 50°C).</li>
+                <li>If the sensor is malfunctioning, the system displays an error notification.</li>
+            </ul>
+        </div>
+
+        <h3>User Story 2: Pengisian Daya dari Solar Panel</h3>
+        <p><strong>As an</strong> operator,</p>
+        <p><strong>I want</strong> the IoT device to charge its battery using a solar panel</p>
+        <p><strong>so that</strong> the device remains operational without needing external power.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The system shows real-time battery status.</li>
+                <li>The device charges successfully when exposed to sunlight.</li>
+                <li>The device continues functioning while charging.</li>
+                <li>If solar charging fails, an alert is generated.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="epic">
+        <h2>EPIC 2: Sub Sistem Komunikasi</h2>
+
+        <h3>User Story 3: Pengiriman Data Suhu ke Back End</h3>
+        <p><strong>As a</strong> backend user,</p>
+        <p><strong>I want</strong> the IoT system to send temperature data via 4G</p>
+        <p><strong>so that</strong> the data can be stored and analyzed on the backend.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The system sends real-time temperature data to the backend server.</li>
+                <li>Data transmission should be completed successfully via a 4G modem.</li>
+                <li>If transmission fails, the system retries three times before alerting an error.</li>
+                <li>The system uses MQTT or HTTP protocol for data transmission.</li>
+            </ul>
+        </div>
+
+        <h3>User Story 4: Penerimaan Perintah Aktivasi Sensor</h3>
+        <p><strong>As a</strong> system administrator,</p>
+        <p><strong>I want</strong> the backend to send activation commands to the IoT device</p>
+        <p><strong>so that</strong> sensors can be activated remotely.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The backend system sends activation commands to the IoT device.</li>
+                <li>The IoT device successfully activates the sensor upon receiving the command.</li>
+                <li>If the command fails, the system retries and generates an error after 3 failures.</li>
+                <li>The communication protocol used is either MQTT or HTTP.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="epic">
+        <h2>EPIC 3: Sub Sistem Back End</h2>
+
+        <h3>User Story 5: Menyimpan Data Sensor</h3>
+        <p><strong>As a</strong> backend administrator,</p>
+        <p><strong>I want</strong> to store sensor data from the IoT device</p>
+        <p><strong>so that</strong> I can use it for reporting and analysis.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The backend system receives data from all sensors (temperature, humidity, light, images) in real-time.</li>
+                <li>The data is correctly stored in the Postgres database.</li>
+                <li>The system ensures data integrity and prevents duplication.</li>
+                <li>If any data transmission is incomplete, the system alerts the admin.</li>
+            </ul>
+        </div>
+
+        <h3>User Story 6: Menyimpan Gambar ke Object Storage</h3>
+        <p><strong>As a</strong> system administrator,</p>
+        <p><strong>I want</strong> images from the IoT device to be stored in an object storage</p>
+        <p><strong>so that</strong> the images can be accessed and processed later.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The system receives image data from the IoT device.</li>
+                <li>The system stores images in the object storage service.</li>
+                <li>The system ensures images are stored in the correct folder or bucket.</li>
+                <li>If image storage fails, the system retries three times and notifies the administrator.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="epic">
+        <h2>EPIC 4: Sub Sistem Front End</h2>
+
+        <h3>User Story 7: Menampilkan Data Sensor di Front End</h3>
+        <p><strong>As a</strong> user,</p>
+        <p><strong>I want</strong> the Front End to display sensor data from the IoT device</p>
+        <p><strong>so that</strong> I can monitor environmental conditions in real-time.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The frontend system shows temperature, humidity, and light intensity data in real-time.</li>
+                <li>The data is displayed in a user-friendly format (e.g., graphs, tables).</li>
+                <li>Users can filter the data based on time (daily, hourly, weekly).</li>
+                <li>If new data arrives, the frontend system updates the display automatically.</li>
+            </ul>
+        </div>
+
+        <h3>User Story 8: Menampilkan Gambar dari Object Storage</h3>
+        <p><strong>As a</strong> system user,</p>
+        <p><strong>I want</strong> to view images captured by the IoT device in the frontend</p>
+        <p><strong>so that</strong> I can assess the environment and conditions visually.</p>
+        <div class="acceptance-criteria">
+            <p><strong>Acceptance Criteria:</strong></p>
+            <ul>
+                <li>The frontend system retrieves images from the object storage.</li>
+                <li>The images are displayed in a gallery or slideshow format.</li>
+                <li>Users can zoom in and out of the images for better detail.</li>
+                <li>If the image cannot be retrieved, an error message is displayed.</li>
+            </ul>
+        </div>
+
+        <h3>User Story 9: Menampilkan Grafik Sensor Berdasarkan Waktu</h3>
+        <p><strong>As a</strong> user,</p>
+        <p><strong>I want</strong> to view sensor data in the form of graphs</p>
+        <p><strong>so that</strong> I can analyze trends over specific time periods.</p>
+        <div class="acceptance-criteria">
+           
