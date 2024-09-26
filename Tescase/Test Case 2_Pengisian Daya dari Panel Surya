@@ -1,0 +1,9 @@
+Feature: Charging from solar panel on IoT device
+
+  Scenario: IoT device charges using solar panel
+    Given the IoT device is exposed to sunlight
+    When the system detects that the battery requires charging
+    Then the device should start charging using the solar panel
+    And the charging status should be displayed in real-time
+    And the device should continue to function during the charging process
+    And the system should display an error message if the charging process fails

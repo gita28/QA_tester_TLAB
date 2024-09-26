@@ -1,0 +1,9 @@
+Feature: Sending temperature data from IoT device to Back End
+
+  Scenario: IoT system sends temperature data to back end via 4G modem
+    Given the IoT device is active and connected to the back end
+    When the IoT device detects the environmental temperature
+    Then the system should send the temperature data to the back end in real-time
+    And the temperature data should be transmitted via the 4G modem
+    And the system should retry sending the data up to 3 times if the transmission fails
+    And the system should display an error message if the transmission fails after all retries
