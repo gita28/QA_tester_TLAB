@@ -1,0 +1,8 @@
+Feature: Storing sensor data in the Back End system
+
+  Scenario: Back end system receives and stores sensor data from IoT device
+    Given the IoT device sends sensor data to the back end
+    When the temperature, humidity, and light intensity data are received
+    Then the system should store the data in the Postgres database
+    And the system should ensure that the data is stored correctly without duplication
+    And if the data transmission is incomplete, the system should display an error notification

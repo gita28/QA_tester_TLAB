@@ -1,0 +1,8 @@
+Feature: Displaying sensor data in the Front End application
+
+  Scenario: Sensor data is displayed in real-time on the front end
+    Given the back end system has sent sensor data to the front end
+    When the user opens the front end application
+    Then the system should display the temperature, humidity, and light intensity data in real-time
+    And the data should be updated whenever there is a change from the IoT device
+    And the user should be able to filter the data based on time (daily, hourly, weekly)

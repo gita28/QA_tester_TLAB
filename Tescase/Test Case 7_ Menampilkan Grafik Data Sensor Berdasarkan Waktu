@@ -1,0 +1,8 @@
+Feature: Displaying sensor data graph based on time range in the Front End application
+
+  Scenario: User views sensor data graph based on time
+    Given the sensor data has been stored in the back end system
+    When the user selects a time filter in the front end application (e.g., daily, weekly)
+    Then the system should display the sensor data graph according to the selected time range
+    And the graph should show temperature, humidity, and light intensity data in a single view
+    And if there is no data for the selected time range, the system should display the message "No data available"
