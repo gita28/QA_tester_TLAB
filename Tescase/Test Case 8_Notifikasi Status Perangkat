@@ -1,8 +1,8 @@
-Feature: Displaying sensor data graph based on time range in the Front End application
+Feature: IoT device status notification in the Front End application
 
-  Scenario: User views sensor data graph based on time
-    Given the sensor data has been stored in the back end system
-    When the user selects a time filter in the front end application (e.g., daily, weekly)
-    Then the system should display the sensor data graph according to the selected time range
-    And the graph should show temperature, humidity, and light intensity data in a single view
-    And if there is no data for the selected time range, the system should display the message "No data available"
+  Scenario: User receives notification about IoT device status
+    Given the IoT device is active or has just received new sensor data
+    When the status of the IoT device changes (to active or inactive)
+    Then the system should send a notification to the user about the device status change
+    And the system should send a notification when new sensor data is received
+    And the user should be able to manage notification preferences (to enable or disable notifications)
